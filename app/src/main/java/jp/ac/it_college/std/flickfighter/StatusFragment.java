@@ -87,8 +87,8 @@ public class StatusFragment extends Fragment implements View.OnClickListener {
                     //int l = 0;
                     int level = 0;
                     SharedPreferences.Editor editor = playerStatus.edit();
-                    editor.putInt(POINT, playerStatus.getInt(POINT, 0) - 100)
-                            .apply();
+                    //editor.putInt(POINT, playerStatus.getInt(POINT, 0) - 100)
+                    //        .apply();
                     //SharedPreferences.Editor editor = playerStatus.edit();
                     //editor.putInt("level1", 0);
                     //editor.apply();
