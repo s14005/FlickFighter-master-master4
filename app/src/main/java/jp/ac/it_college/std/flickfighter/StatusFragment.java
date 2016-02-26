@@ -94,7 +94,7 @@ public class StatusFragment extends Fragment implements View.OnClickListener {
                     //editor.apply();
                     level = playerStatus.getInt("level1", 0);
 
-                    editor.putInt(POINT, playerStatus.getInt(POINT, 0) - 100 * level + 1)
+                    editor.putInt(POINT, playerStatus.getInt(POINT, 0) - 100 * (level + 1))
                             .apply();
                     level ++;
                     editor.putInt("level1", level);
