@@ -163,14 +163,19 @@ public class Character extends Activity implements View.OnClickListener{
 
                                 List<String> list =Arrays.asList(array);
                                 if(list.contains("1")) {
-                                    textView.setText("攻撃力: " + Gatya.AttackPath[1] + " HP :" + Gatya.HpPath[1]);
+
+                                    int l = 0;
+                                    l = playerStatus.getInt("level1", 0);
+                                    int goukei = Gatya.AttackPath[1] + (l *10);
+                                    int goukei2 = Gatya.HpPath[1] + (l *10);
+                                    textView.setText("攻撃力: " + goukei + " HP :" + goukei2);
                                     SharedPreferences.Editor editor = playerStatus.edit();
                                     editor.remove(ATTACK);
                                     editor.remove(LIFE);
                                     editor.remove(CHARACTER);
                                     editor.apply();
-                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 130))
-                                            .putInt(LIFE, playerStatus.getInt(LIFE, 130))
+                                    editor.putInt(ATTACK, playerStatus.getInt(ATTACK, 130 + (l*10)))
+                                            .putInt(LIFE, playerStatus.getInt(LIFE, 130 + (l*10)))
                                             .putInt(CHARACTER, playerStatus.getInt(CHARACTER, R.drawable.f002))
                                             .apply();
                                 } else {
